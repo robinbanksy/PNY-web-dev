@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    position: relative;
+    margin: 3rem;
+    background-color: red;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 2rem;
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    background-color: white;
+    top: calc(50% - 1.5rem);
+    left: calc(50% - 1.5rem);
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    background-color: white;
+    top: calc(50% - 1.5rem);
+    left: calc(50% - 1.5rem);
+    transform: rotate(45deg);
+}
