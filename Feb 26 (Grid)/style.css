@@ -9,11 +9,11 @@
     padding: 1rem;
     background-color: rgb(181, 181, 181);
 
-    
+    /*
     display: grid;
     grid-template-columns: repeat(4, 1fr);    
     gap: 10px;
-    
+    */
 
     /*
     display: grid;
@@ -30,58 +30,50 @@
     background-color: rgb(234, 125, 125);
     padding: 1rem;
     text-align: center;
-    grid-column: 2 / span 3;
 
+    /* grid-column: 1 / span 4; */
+
+    /* grid-area: header; */
 }
 
 .item2 {
     background-color: rgb(133, 202, 224);
     padding: 1rem;
     text-align: center;
-
-    grid-row: 2 / span 4;
 }
 
 .item3 {
     background-color: rgb(255, 153, 102);
     padding: 1rem;
     text-align: center;
-
 }
 
 .item4 {
     background-color: rgb(255, 255, 102);
     padding: 1rem;
     text-align: center;
-
 }
 
 .item5 {
     background-color: rgb(255, 153, 255);
     padding: 1rem;
     text-align: center;
-
 }
 
 .item6 {
     background-color: rgb(144, 238, 144);
     padding: 1rem;
     text-align: center;
-
 }
 
 .item7 {
     background-color: rgb(134, 109, 235);
     padding: 1rem;
     text-align: center;
-
 }
 
 .item8 {
     background-color: rgb(114, 232, 220);
     padding: 1rem;
     text-align: center;
-
-    grid-column: 1;
-    grid-row: 1;
 }
