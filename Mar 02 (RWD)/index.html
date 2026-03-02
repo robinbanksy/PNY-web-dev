@@ -20,14 +20,20 @@
         </nav>
         <section class="content">
             <h2>Responsive Web Design</h2>
-            <p>Responsive web design ensures that your website looks great on all devices, from desktops to smartphones. It provides a better user experience and can improve your search engine rankings.</p>
-            <p>With the increasing use of mobile devices, having a responsive website is essential for reaching a wider audience and keeping visitors engaged.</p>
+            <p>Responsive web design (RWD) ensures that your website is usable on all devices, from desktops to smartphones. This is especially important today, since a majority of internet traffic now comes from mobile devices.</p>
+            <p>Since every website is different, RWD is more a set of guidelines and best practices than a rigid set of rules. My advice would be the follow certain steps when thinking about how to lay out your pages:</p>
+            <ol>
+                <li>The first step is realizing that HTML pages actually tend to be responsive by default! Often issues are caused by CSS that we write that overrides the default behavior. So when writing CSS, be mindful of how you do it</li>
+                <li>Use flexible grid layouts that can adapt to different screen sizes. This often involves using CSS Grid or Flexbox.</li>
+                <li>Make images and media flexible so they can scale within their containers.</li>
+                <li>Use media queries as a last resort, when other responsive techniques are not sufficient. For example, if you have a very complex layout that doesn't adapt well to smaller screens, you might use media queries provide an alternative layout for mobile devices.</li>
+            </ol>
         </section>
         <section class="content">
-            <h2>Lorem Ipsum</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur bibendum. Curabitur ac ligula a odio efficitur tincidunt. Sed at felis nec nisi convallis fermentum.</p>
-            <p>Phasellus ut velit a nisl efficitur commodo. Maecenas in ligula sed enim efficitur varius. Nulla facilisi. Donec ac nunc id metus bibendum tincidunt.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae corporis mollitia harum enim nemo asperiores ut provident earum ullam. Reiciendis, vel voluptas. Aliquam officia maxime ratione! Eveniet asperiores rem commodi voluptatem veniam eaque esse. Commodi alias, in, placeat architecto non quo ut repudiandae nam nostrum soluta voluptate odit aperiam nemo atque dolores fugiat tempora perferendis blanditiis eligendi corporis error itaque labore voluptas. Autem culpa facere, consequuntur alias magnam vero vel, odio eaque accusamus qui iure quos beatae, vitae in adipisci illum ratione. Veritatis earum quia veniam aspernatur culpa pariatur maxime aliquam recusandae ipsam libero at ullam corporis ipsa, fugiat, alias iure excepturi eum placeat deleniti sed necessitatibus dignissimos minus! Quae, veniam quia voluptate deserunt ea qui vero similique iste eius, mollitia exercitationem laudantium modi maxime. Cumque alias deserunt, cum recusandae eaque assumenda vel vero accusamus, reprehenderit quisquam perspiciatis, rerum consequuntur ullam. Placeat voluptate odit fugit quidem velit, voluptatum et totam.</p>
+            <h2>Images</h2>
+            <p>Images are one of the few cases where default HTML behavior can fail us. A very large image can cause the dreaded side-scroll.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Binturong_in_Overloon.jpg?_=20050701171702" alt="Photo of a binturong" class="responsive-image">
+            <p>Thankfully, the fix is usually fairly straightforward: set the image's max-width to a percentage and set its height to auto. This ensures that the image scales down to fit within its container while maintaining its aspect ratio.</p>
         </section>
         <section class="content">
             <h2>Media Queries</h2>
