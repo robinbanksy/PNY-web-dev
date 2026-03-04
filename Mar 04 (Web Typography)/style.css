@@ -1,6 +1,6 @@
 :root {
-    --bg-color: #f1f1f1;
-    --fg-color: #3d3d3d;
+    --bg-color: #eae8e5;
+    --fg-color: #3d3c3b;
 }
 
 @font-face {
@@ -25,12 +25,12 @@ body {
 }
 
 .wrapper {
-    width: 70%;
+    width: min(70%, 800px);
     margin: 0 auto;
     padding: 2rem 0 1rem 0;
     display: flex;
     flex-direction: column;
-    gap: 2.2rem;
+    gap: 3.5rem;
 }
 
 header h1 {
@@ -79,4 +79,30 @@ footer {
     font-size: 0.8rem;
     padding: 1rem 0;
     color: hsl(from var(--fg-color) h s 65%);
+}
+
+.demo {
+    transition: all 0.3s ease;
+    position: relative;
+}
+.demo::before {
+    content: "";
+    display: block;
+    height: 0.5rem;
+    width: 0.5rem;
+    background-color: var(--fg-color);
+    position: absolute;
+    top: 0.55rem;
+    left: -1.2rem;
+    transform: rotate(45deg);
+}
+.demo::after {
+    content: "";
+    display: block;
+    height: 1rem;
+    width: 0.5rem;
+    background-color: var(--bg-color);
+    position: absolute;
+    top: 0.2rem;
+    left: -1.5rem;
 }
