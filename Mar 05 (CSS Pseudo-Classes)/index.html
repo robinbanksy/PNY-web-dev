@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pseudo-classes.css">
+    <title>March 05</title>
+</head>
+<body>
+    <div class="wrapper" id="top">
+    <header class="content">
+        <h1>CSS Pseudo-Classes</h1>
+        <p>Pseudo-classes are keywords added to selectors that specify a special state of the selected elements. They allow us to apply styles based on user interaction, element position, or other conditions without needing to add extra classes or IDs to your HTML.</p>
+                <p>Pseudo-classes are defined using a colon (:) followed by the pseudo-class name. For example, <code>:hover</code> is a pseudo-class that applies styles when the user hovers the mouse over an element.</p>
+    </header>
+    <section class="hover content">
+        <h2>Hover Pseudo-Class</h2>
+        <p>The <code>:hover</code> pseudo-class applies styles when the user hovers the mouse over an element.</p>
+        <p>For example, you can change the background color of a button when it's hovered:</p>
+        <pre class="code-block"><code>button:hover {
+    background-color: var(--primary-color);
+}</code></pre>
+        <button class="hover-demo demo">Hover over me!</button>
+        <p>This will make the button's background color change when the user hovers over it. Any styling corresponding to the hover selector will override the default styles. This means we don't need to stop at just changing the color. Pretty much any CSS property can be changed on hover.</p>
+        <p>Some more examples:</p>
+        <pre class="code-block"><code>button:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 25px;
+}</code></pre>
+        <button class="hover-demo-2 demo">Hover over me!</button>
+        <pre class="code-block"><code>button:hover {
+    transform: scale(105%);
+    background-color: var(--primary-color);        
+}</code></pre>
+        <button class="hover-demo-3 demo">Hover over me!</button>
+    </section>
+    <section class="content focus">
+        <h2>Focus Pseudo-Class</h2>
+        <p>The <code>:focus</code> pseudo-class applies styles when an element has received focus, either through keyboard navigation or by being clicked on.</p>
+        <p>For example, you can change the border color of an input field when it receives focus:</p>
+        <pre class="code-block"><code>input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}</code></pre>
+        <input type="text" placeholder="Type here..." class="focus-demo demo">
+        <p>This will change the outline color of the input field when it receives focus. The <code>outline: none;</code> property is often used to remove the default focus outline, but be cautious when doing this, as it can affect accessibility. Always ensure that there is some visual indication of focus for users who rely on keyboard navigation.</p>
+        <p>Just like with <code>:hover</code>, <code>:focus</code> can be used to override CSS properties when an element is in the focus state.</p>
+    </section>
+    <section class="content focus-within">
+        <h2>Focus-Within Pseudo-Class</h2>
+        <p>The <code>:focus-within</code> pseudo-class applies styles to an element when it or any of its descendants have received focus.</p>
+        <p>For example, you can change the background color of a form when any of its input fields receive focus:</p>
+        <pre class="code-block"><code>form:focus-within {
+    background-color: var(--primary-color);
+}</code></pre>
+        <form class="focus-within-demo demo">
+            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="Last Name">
+        </form>
+        <p>This is similar to the <code>:focus</code> pseudo-class, but it applies to the parent element when any of its descendants have focus. This is useful for highlighting a form that the user is currently interacting with.</p>
+    </section>
+    <section class="content enabled-disabled">
+        <h2>Enabled and Disabled Pseudo-Classes</h2>
+        <p>The <code>:enabled</code> pseudo-class applies styles to elements that are enabled, while the <code>:disabled</code> pseudo-class applies styles to elements that are disabled.</p>
+        <p>For example, you can style enabled and disabled buttons differently:</p>
+        <pre class="code-block"><code>button:enabled {
+    background-color: var(--primary-color);
+    color: white;
+}
+button:disabled {
+    background-color: var(--secondary-color);
+    color: gray;
+}</code></pre>
+        <button class="enabled-demo demo">Enabled Button</button>
+        <button class="disabled-demo demo" disabled>Disabled Button</button>
+        <p>In this example, the enabled button will have a primary background color and white text, while the disabled button will have a secondary background color and gray text. This allows users to easily distinguish between interactive and non-interactive elements on the page.</p>
+    </section>
+    <section class="content link-visited">
+        <h2>Link and Visited Pseudo-Classes</h2>
+        <p>The <code>:link</code> pseudo-class applies styles to links that have not yet been visited, while the <code>:visited</code> pseudo-class applies styles to links that have already been visited.</p>
+        <p>For example, you can style unvisited and visited links differently:</p>
+        <pre class="code-block"><code>a:link {
+    color: var(--primary-color);
+}
+a:visited {
+    color: var(--secondary-color);
+}</code></pre>
+        <a href="https://www.example.com" target="_blank" class="link-demo demo">Visit Example.com</a>
+        <p>In this example, the link will be styled with the primary color when it has not been visited, and it will change to the secondary color once it has been visited.</p>
+    </section>
+    <section class="content nth-child">
+        <h2>nth-child Pseudo-Class</h2>
+        <p>The <code>:nth-child(n)</code> pseudo-class applies styles to elements based on their position within a parent element. The <code>n</code> can be a number, a keyword, or a formula.</p>
+        <p>For example, you can style every even child of a list differently:</p>
+        <pre class="code-block"><code>li:nth-child(even) {
+    background-color: var(--primary-color);
+    color: white;
+}</code></pre>
+        <ul class="nth-child-demo demo">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+        </ul>
+        <p>In this example, every even list item will have a primary background color and white text, while the odd items will retain their default styling. You can also use other values for <code>n</code>, such as <code>odd</code>, specific numbers (e.g., <code>3</code>), or formulas (e.g., <code>2n+1</code>) to target specific child elements.</p>
+    </section>
+    </div>
+    <footer>
+        <p>© 2026 Umair Almahmood</p>
+        <a href="https://github.com/robinbanksy/PNY-web-dev" target="_blank">GitHub Repository</a>
+    </footer>
+    <a href="#top" class="back-to-top"></a>
+</body>
+</html>

@@ -1,0 +1,134 @@
+:root {
+    --bg-color:          #f0f0f0;
+    --fg-color:          #302e35;
+    --primary-color:     #5534db;
+    --secondary-color:   #e04caa;
+    --tertiary-color:    #f0a500;
+    --code-block-color:  #dcdcdc;
+}
+
+@font-face {
+    font-family: 'Funnel Display';
+    src: url(./fonts/Funnel_Display/FunnelDisplay-VariableFont_wght.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Funnel Display', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 5rem;
+    position: relative;
+}
+
+.wrapper {
+    max-width: 650px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -3rem;
+    width: 1rem;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    z-index: -1;
+}
+.content:last-child {
+    margin-bottom: 7rem;
+}
+
+
+code {
+    background-color: rgb(220, 220, 220);
+    border-radius: 5px;
+    padding: 2px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.code-block {
+    position: relative;
+    background-color: var(--code-block-color);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.demo {
+    margin-bottom: 1rem;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    min-height: 3rem;
+    text-align: center;
+    padding: 20px;
+    color: hsl(from var(--fg-color) h s 80%);
+    background-color: var(--primary-color);
+}
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 2rem;
+    bottom: 6rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 200ms ease;
+}
+.back-to-top:hover {
+    background-color: var(--secondary-color);
+}
+.back-to-top::after {
+    content: '↑';
+}

@@ -1,0 +1,127 @@
+
+.hover-demo {
+    background-color: rgb(160, 160, 160);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border: 0px;
+}
+.hover-demo:hover {
+    background-color: var(--primary-color);
+}
+
+
+.hover-demo-2 {
+    background-color: rgb(160, 160, 160);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border: 0px;
+    transition: all 200ms ease;
+}
+.hover-demo-2:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 25px;
+}
+
+
+.hover-demo-3 {
+    background-color: rgb(160, 160, 160);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border: 0px;
+    transition: all 200ms ease;
+}
+.hover-demo-3:hover {
+    transform: scale(110%);
+    background-color: var(--tertiary-color);
+    color: white;   
+}
+
+
+.focus-demo {
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(160, 160, 160);
+}
+.focus-demo:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+}
+
+
+.focus-within-demo input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(160, 160, 160);
+}
+.focus-within-demo {
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(160, 160, 160);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.focus-within-demo:focus-within {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+}
+
+
+.enabled-demo {
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(160, 160, 160);
+    transition: all 200ms ease;
+}
+.enabled-demo:enabled {
+    background-color: var(--primary-color);
+    color: white;
+    border: 0px;
+}
+.enabled-demo:hover {
+    background-color: var(--secondary-color);
+}
+.disabled-demo {
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(160, 160, 160);
+}
+.disabled-demo:disabled {
+    background-color: rgb(160, 160, 160);
+    color: white;
+    border: 0px;
+}
+
+
+.link-demo {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.link-demo:link {   
+    color: var(--primary-color);
+}
+.link-demo:visited {
+    color: var(--secondary-color);
+}
+
+
+.nth-child-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+}
+.nth-child-demo li {
+    padding: 5px;
+    border-radius: 5px;
+}
+.nth-child-demo li:nth-child(even) {
+    background-color: var(--primary-color);
+    color: white;
+}
