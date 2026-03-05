@@ -41,8 +41,8 @@
         <p>The <code>:focus</code> pseudo-class applies styles when an element has received focus, either through keyboard navigation or by being clicked on.</p>
         <p>For example, you can change the border color of an input field when it receives focus:</p>
         <pre class="code-block"><code>input:focus {
-    border-color: var(--primary-color);
-    outline: none;
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
 }</code></pre>
         <input type="text" placeholder="Type here..." class="focus-demo demo">
         <p>This will change the outline color of the input field when it receives focus. The <code>outline: none;</code> property is often used to remove the default focus outline, but be cautious when doing this, as it can affect accessibility. Always ensure that there is some visual indication of focus for users who rely on keyboard navigation.</p>
@@ -53,7 +53,8 @@
         <p>The <code>:focus-within</code> pseudo-class applies styles to an element when it or any of its descendants have received focus.</p>
         <p>For example, you can change the background color of a form when any of its input fields receive focus:</p>
         <pre class="code-block"><code>form:focus-within {
-    background-color: var(--primary-color);
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
 }</code></pre>
         <form class="focus-within-demo demo">
             <input type="text" placeholder="First Name">
@@ -70,8 +71,8 @@
     color: white;
 }
 button:disabled {
-    background-color: var(--secondary-color);
-    color: gray;
+    background-color: rgb(160, 160, 160);
+    color: white;
 }</code></pre>
         <button class="enabled-demo demo">Enabled Button</button>
         <button class="disabled-demo demo" disabled>Disabled Button</button>
@@ -97,7 +98,18 @@ a:visited {
         <pre class="code-block"><code>li:nth-child(even) {
     background-color: var(--primary-color);
     color: white;
-}</code></pre>
+}
+
+li:nth-child(odd) {
+    background-color: var(--secondary-color);
+    color: inherit;
+}
+
+li:nth-child(3) {
+    background-color: var(--tertiary-color);
+    color: white;
+}
+</code></pre>
         <ul class="nth-child-demo demo">
             <li>Item 1</li>
             <li>Item 2</li>

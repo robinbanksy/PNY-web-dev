@@ -124,3 +124,12 @@
     background-color: var(--primary-color);
     color: white;
 }
+.nth-child-demo li:nth-child(odd) {
+    background-color: var(--secondary-color);
+    color: inherit;
+}
+
+.nth-child-demo li:nth-child(3) {
+    background-color: var(--tertiary-color);
+    color: white;
+}
