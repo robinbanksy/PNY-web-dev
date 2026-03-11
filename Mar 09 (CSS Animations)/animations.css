@@ -1,6 +1,8 @@
 .card:hover .color-change {
-    animation: color-change 2000ms linear 1;
-
+    animation-name: color-change;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 }
 
 .card:hover .orbit {
@@ -11,7 +13,7 @@
     animation: orbit 800ms ease-in-out infinite, color-change 800ms ease-in-out infinite;
 }
 
-.card:hover .flip {
+.flip {
     animation-name: flip, color-change;
     animation-duration: 1s, 800ms;
     animation-timing-function: ease-in-out, ease-in-out;
@@ -38,18 +40,15 @@
 }
 
 @keyframes orbit {
-    0% {
+    from {
         transform: rotate(0deg) translateX(50px) rotate(0deg);
     }
-    100% {
+    to {
         transform: rotate(360deg) translateX(50px) rotate(-360deg);
     }
 }
 
 @keyframes flip {
-    from {
-        transform: rotateY(0deg);
-    }
     to {
         transform: rotateY(360deg);
     }
@@ -62,4 +61,10 @@
     .card:hover .flip {
         animation: none;
     }
+}
+
+.timeline {
+    animation: color-change 10s linear infinite;
+    animation-duration: auto;
+    animation-timeline: scroll();
 }
