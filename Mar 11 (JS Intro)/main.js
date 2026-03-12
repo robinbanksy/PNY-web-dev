@@ -16,7 +16,7 @@ const pi = 3.14;
 console.log("The value of pi is: " + pi);
 
 // Uncommenting the following line will cause an error because 'pi' is a constant.
-// pi = 3.14159;
+// pi = 3.14159; // This will throw a TypeError because we cannot reassign a constant variable.
 // A good practice is to use 'const' whenever possible to prevent accidental reassignment of variables that should remain constant. 
 // If you later need to reassign that variable, you can change it to 'let'.
 
@@ -51,7 +51,6 @@ function greet(name) {
 
 // A function that takes two numbers and returns their sum
 function add(num1, num2) { 
-    let x = 1;
     return num1 + num2;
 }
 
