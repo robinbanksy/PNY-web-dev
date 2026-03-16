@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>March 16</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Switch Statements and the Ternary Operator</h1>
+        </header>
+        <section class="content">
+            <h2>Switch Statements</h2>
+            <p>We previously saw that we could cover multiple different cases using a conditional statement consisting of an arbitrary number of 'else if' clauses. However, this can be cumbersome and less readable than using a <strong>switch statement</strong>.</p>
+            <p>Switch statements are particularly useful when you have a variable that you want to compare against multiple possible values. For example:</p>
+            <pre><code class="language-javascript">
+switch (variable) {
+    case value1:
+        // code to be executed if expression === value1
+        break;
+    case value2:
+        // code to be executed if expression === value2
+        break;
+    // more cases...
+    default:
+        // code to be executed if expression doesn't match any case
+}
+    </code></pre>
+        </section>
+        <section class="content">
+            <h2>And, Or, and Not</h2>
+            <p>So far our boolean expressions have been fairly simple, just checking if a single condition is met. If we want to check multiple conditions, we can use logical operators to form compound expressions.</p>
+            <p>The <strong>and</strong> operator (&amp;&amp;) returns true if both operands are true.</p>
+            <p>The <strong>or</strong> operator (||) returns true if at least one of the operands is true.</p>
+            <p>The <strong>not</strong> operator (!) returns the opposite of the operand's boolean value.</p>
+        </section>
+        <section class="content">
+            <h2>Ternary Operator</h2>
+            <p>The ternary operator is a shorthand way of writing an if-else statement. It takes three operands: a condition, an expression to execute if the condition is true, and an expression to execute if the condition is false. The syntax is as follows:</p>
+            <pre><code class="language-javascript">
+condition ? expressionIfTrue : expressionIfFalse;
+    </code></pre>
+            <p>For example:</p>
+            <pre><code class="language-javascript">
+let canVote = age >= 18 ? "Yes" : "No";
+    </code></pre>
+        </section>
+        <footer>
+            <p>&copy; 2026 Umair Almahmood</p>
+        </footer>
+    </div>
+</body>
+</html>
