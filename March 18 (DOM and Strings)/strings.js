@@ -21,3 +21,20 @@ console.log(strTwo.toLowerCase());
 // // split
 // console.log(strOne.split(", "));
 // console.log(strTwo.split(", "));
+
+// Convert all 'E's in the input string to '3's
+function Eis3(str) {
+
+}
+
+// Return first word of string
+// Challenge: words should be trimmed to exclude punctuation
+function firstWord(str) {
+
+}
+
+// Return last word of string
+// Challenge: words should be trimmed to exclude punctuation
+function lastWord(str) {
+
+}
