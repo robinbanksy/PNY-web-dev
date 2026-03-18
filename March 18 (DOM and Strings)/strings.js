@@ -3,12 +3,12 @@ let strOne = "Hello, World!";
 let strTwo = "Goodbye, World!";
 
 // toUpperCase and toLowerCase
-console.log(strOne.toUpperCase());
-console.log(strTwo.toLowerCase());
+// console.log(strOne.toUpperCase());
+// console.log(strTwo.toLowerCase());
 
 // // subString
-// console.log(strOne.substring(0, 5));
-// console.log(strTwo.substring(0, 7));
+// console.log(strOne.substring(7, 12));
+// console.log(strTwo.substring(4, 7));
 
 // // charAt
 // console.log(strOne.charAt(7));
@@ -19,12 +19,20 @@ console.log(strTwo.toLowerCase());
 // console.log(strTwo.indexOf("World"));
 
 // // split
-// console.log(strOne.split(", "));
+// console.log(strOne.split(""));
 // console.log(strTwo.split(", "));
 
 // Convert all 'E's in the input string to '3's
 function Eis3(str) {
-
+    let output = ""
+    for (const char of str) {
+        if (char === "e" || char === "E") {
+            output += "3";
+        } else {      
+            output += char;
+        }
+    }
+    return output;
 }
 
 // Return first word of string
