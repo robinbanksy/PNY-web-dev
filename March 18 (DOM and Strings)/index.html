@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>March 18</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>String Manipulation and the DOM</h1>
+        </header>
+        <section class="content">
+            <h2>Strings</h2>
+            <p>As covered in previous lessons, strings are a core data type in JavaScript. Essentially, a string is a sequence of characters that form some text.</p>
+            <p>In some cases, we may want to manipulate the characters within a string; for example, we might want to convert all characters to uppercase or lowercase letters, or extract a substring.</p>
+            <p>There are a number of ways that we can manipulate strings. JavaScript provides several built-in methods for string manipulation. Additionally, we can use various string properties to access information about a string.</p>
+        </section>
+        <section class="content">
+            <h2>String Methods</h2>
+            <p>Some of the most commonly used string methods include:</p>
+            <ul class="cards">
+                <li class="card"><strong>toUpperCase()</strong><br> Converts all characters in a string to uppercase letters.
+                    <div class="active-text">
+                        <pre class="code-block"><code>
+const str = "Hello, World!";
+const upperStr = str.toUpperCase();
+console.log(upperStr); <span class="comment">// Output: "HELLO, WORLD!"</span>
+                        </code></pre>
+                    </div>
+                </li>
+                <li class="card"><strong>toLowerCase()</strong><br> Converts all characters in a string to lowercase letters.
+                    <div class="active-text">
+                        <pre class="code-block"><code>
+const str = "Hello, World!";
+const lowerStr = str.toLowerCase();
+console.log(lowerStr); <span class="comment">// Output: "hello, world!"</span>
+                        </code></pre>
+                    </div>
+                </li>
+                <li class="card"><strong>substring(start, end)</strong><br> Extracts a portion of a string and returns it as a new string.
+                    <div class="active-text">
+                        <pre class="code-block"><code>
+const str = "Hello, World!";
+const subStr = str.substring(0, 5);
+const subStr2 = str.substring(7, 12);
+const subStr3 = str.substring(7); <span class="comment">// If the end index is omitted, it extracts until the end of the string.</span>
+console.log(subStr); <span class="comment">// Output: "Hello"</span>
+console.log(subStr2); <span class="comment">// Output: "World"</span>
+console.log(subStr3); <span class="comment">// Output: "World!"</span>
+                        </code></pre>
+                    </div>
+                </li>
+                <li class="card"><strong>charAt(index)</strong><br> Returns the character at a specified index in a string.
+                    <div class="active-text">
+                        <pre class="code-block"><code>
+const str = "Hello, World!";
+const char = str.charAt(0);
+console.log(char); <span class="comment">// Output: "H"</span>
+                        </code></pre>
+                    </div>
+                </li>
+                <li class="card"><strong>indexOf(substring)</strong><br> Returns the index of the first occurrence of a specified value in a string.
+                    <div class="active-text">
+                        <pre class="code-block"><code>
+const str = "Hello, World!";
+const index = str.indexOf("World");
+console.log(index); <span class="comment">// Output: 7</span>
+                        </code></pre>
+                    </div>
+                </li>
+                <li class="card"><strong>split(delimiter)</strong><br> Splits a string into an array of substrings based on a specified delimiter.
+                    <div class="active-text">
+                        <pre class="code-block"><code>
+const str = "Hello, World!";
+const words = str.split(", ");
+console.log(words); <span class="comment">// Output: ["Hello", "World!"]</span>
+                        </code></pre>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="content">
+            <h2>The Document Object Model (DOM)</h2>
+            <p>We can finally start learning how we can use JavaScript to interact with our web pages. When we link a JavaScript file to our HTML document, it passes a reference to the <strong>document object</strong>. Just like the objects we've seen, the document object provides properties and methods which allow us to manipulate it, and by extension, the page itself. This pattern is called the <strong>Document Object Model</strong> (DOM).</p>
+            <p>The DOM is a model of the HTML document that it corresponds to. Like the HTML document, the DOM is a hierarchical structure, with nodes representing the document's child elements, and, in turn, the children of those elements. By using functions provided by the DOM, we can access objects modelling specific elements on the page, and access and modify their properties.</p>
+            <p>For example, we could get a reference to an element, such as a paragraph, and then modify its content or style.</p>
+            <p>Or, we could get a reference to a text input element and access its value.</p>
+            <iframe src="dom.html" frameborder="0" class="dom-demo"></iframe>
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="dom.js"></script>
+</body>
+</html>
