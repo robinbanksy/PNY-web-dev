@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>March 19</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Event Handling</h1>
+        </header>
+        <section class="content">
+            <h2>Events</h2>
+            <p>When users interact with our web pages, they generate <strong>events</strong>. Examples include clicking a button, submitting a form, or hovering over an element. We can <strong>handle</strong> these events using JavaScript to add functionality to our web pages.</p>
+        </section>
+        <section class="content">
+            <h2>Event Listeners</h2>
+            <p>In the previous class, we learned about in-HTML event handlers. However, it's generally better practice to use JavaScript <strong>event listeners</strong> for more flexibility and control.</p>
+            <p>For example, to handle a button click, we can use the following code:</p>
+            <pre class="code-block"><code>const button = document.querySelector('button');
+button.addEventListener('click', function() {
+     doSomething(); <span class="comment">// Regular JavaScript code goes here</span>
+});</code></pre>
+            <p>In the example, we first get a reference to the button element, and then use the <strong>addEventListener</strong> method to attach an event listener to it.</p>
+            <p>The addEventListener method takes two arguments: the event type (e.g., 'click') and a <strong>callback function</strong>. The callback function is executed when the event is triggered.</p>
+            <p>We usually use the <strong>anonymous function</strong> syntax for the callback function, as it allows us to define the function inline without giving it a name.</p>
+            <button class="click-event-demo">Click Me!</button>
+        </section>
+        <section class="content">
+            <h2>Event Propagation</h2>
+            <p>When an event occurs on an element, it doesn't just affect that element. It can also affect its parent elements. This is called <strong>event propagation</strong>.</p>
+            <p>The process by which events first are handled on the target element, and then propagate to parent elements, is called <strong>bubbling</strong>. Observe the following example, where both the parent and child elements have event listeners:</p>
+            <pre class="code-block"><code>
+const parent = document.querySelector('.parent');
+const child = document.querySelector('.child');
+parent.addEventListener('click', function() {
+     alert('Parent clicked');
+});
+child.addEventListener('click', function() {
+     alert('Child clicked');
+});
+            </code></pre>
+            <div class="bubbling-demo">
+                <div class="parent">
+                    Parent
+                    <div class="child">
+                        Child
+                    </div>
+                </div>
+            </div>
+            <p>Notice that when you click on the child element, both alerts are triggered due to event propagation. When the parent element is clicked, only its own alert is triggered.</p>
+            <p>In addition to bubbling, there is also a <strong>capturing</strong> phase, where events are handled from the top down (from the parent to the child). By default, event listeners are set to handle events during the bubbling phase, but you can specify that an event listener should handle events during the capturing phase by passing a third argument as true:</p>
+            <pre class="code-block"><code>element.addEventListener('click', function() {
+     <span class="comment">// Handle click event</span>
+}, true); <span class="comment">// true for capturing phase</span></code></pre>
+            <p>The capturing phase is less commonly used, but it can be useful in specific scenarios where you want to handle events before they reach the target element.</p>
+
+            <iframe src="capturing.html" frameborder="0" class="capturing-demo"></iframe>
+        </section>
+        <section class="content">
+            <h2>Challenge</h2>
+            <p>Recreate yesterday's example, where a paragraph tag matches its text to the input in a text field.</p>
+            <p>Bonus: Make the paragraph replace all letter E's in the input with 3's </p>
+            <div class="challenge">
+                <input type="text" id="textInput" placeholder="Type something..." class="challenge-input">
+                <p class="challenge-paragraph">Make this text match the input!</p>
+            </div>
+        </section>
+    </div>
+
+    <footer></footer>
+        <p>&copy; 2026 Umair Almahmood</p>
+    </footer>
+    <script src="main.js" defer></script>
+</body>
+</html>

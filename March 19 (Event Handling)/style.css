@@ -1,0 +1,218 @@
+:root {
+    --bg-color: #e6e6fc;
+    --fg-color: #3D405B;
+
+    --accent-purple: #7e3dc9;
+    --accent-orange: #E07A5F;
+    --accent-blue: #61c8ff;
+    --accent-yellow: #F2CC8F;
+}
+
+
+@font-face {
+    font-family: 'Funnel Display';
+    src: url(./fonts/Funnel_Display/FunnelDisplay-VariableFont_wght.ttf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    font-family: 'Funnel Display', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 7rem;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 80%;
+}
+
+header::before {
+    left: 400px;
+    background-color: var(--accent-purple);
+}
+header h1::before {
+    left: 435px;
+    background-color: var(--accent-blue);
+}
+header h1::after {
+    left: 470px;
+    background-color: var(--accent-yellow);
+}
+header::after {
+    background-color: var(--accent-orange);
+    left: 505px;
+}
+
+header::after,
+header::before,
+header h1::before,
+header h1::after {
+    position: absolute;
+    bottom: calc(50% - 15px);
+    transform: rotate(45deg);
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: solid 2px var(--fg-color);
+    border-radius: 5px;
+}
+
+header {
+    position: relative;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: var(--lightest-color);
+    
+}
+
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--fg-color);
+}
+
+.content p strong {
+    color: var(--accent-orange);
+    font-weight: 1000;
+    transition: 300ms all ease-in-out;
+}
+strong:hover {
+    color: var(--accent-blue);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.code-block {
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+    padding: 1rem;
+    width: 80%;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+    overflow-x: auto;
+}
+.comment {
+    color: var(--accent-yellow);
+    font-style: italic;
+}
+
+.click-event-demo {
+    background-color: var(--accent-blue);
+    border: none;
+    width: 150px;
+    height: 50px;
+    color: var(--bg-color);
+    font-size: 1.2rem;
+    border-radius: 5px;
+    font-family: 'Funnel Display', sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 200ms all ease-in-out;
+}
+.click-event-demo:hover {
+    background-color: hsl(from var(--accent-blue) h s 80%);
+    transform: scale(105%);
+}
+
+.bubbling-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.parent {
+    background-color: var(--accent-blue);
+    width: 200px;
+    height: 200px;
+    padding: 0.5rem;
+    color: var(--bg-color);
+    font-size: 1.5rem;
+    border-radius: 5px;
+    position: relative;
+}
+.child {
+    background-color: var(--accent-orange);
+    width: 100px;
+    height: 100px;
+    padding: 0.5rem;
+    color: var(--bg-color);
+    font-size: 1rem;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.capturing-demo {
+    width: 80%;
+    height: 400px;
+    border: 1px solid var(--fg-color);
+    border-radius: 5px;
+}
+
+.capturing-parent {
+    background-color: var(--accent-purple);
+}
+
+.capturing-child {
+    background-color: var(--accent-yellow);
+    color: var(--fg-color);
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    color: var(--fg-color);
+}
+
+.challenge {
+    border: 1px solid var(--fg-color);
+    padding: 3rem;
+    border-radius: 5px;
+    min-height: 250px;
+}
+.challenge-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid var(--fg-color);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: var(--bg-color);
+}
+.challenge-input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 5px var(--accent-blue);
+}
+.challenge-paragraph {
+    font-size: 1.2rem;
+    color: var(--fg-color);
+}
