@@ -1,0 +1,52 @@
+
+#add-item {
+    background-color: var(--accent-primary);
+    color: var(--fg-color);
+    border: 1px solid var(--accent-tertiary);
+    box-shadow: 1px 1px 3px var(--accent-tertiary);
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-family: 'Funnel Display';
+    font-weight: 1000;
+    cursor: pointer;
+    transition: 100ms all;
+}
+#add-item:hover {
+    background-color: var(--accent-secondary);
+    box-shadow: 2px 2px 5px var(--accent-secondary);
+}
+
+.card-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 20px;
+    min-height: 300px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--accent-primary);
+    padding: 1rem;
+    border-radius: 5px;
+    color: var(--fg-color);
+    width: 200px;
+    height: 250px;
+    transition: 100ms all;
+}
+.card:hover {
+    transform: scale(105%);
+    background-color: var(--accent-secondary);
+}
+
+.card:last-child {
+    transform: scale(105%);
+    background-color: var(--accent-yellow);
+}
+.card:last-child:hover {
+    transform: scale(110%);
+    background-color: hsl(from var(--accent-yellow) h s 80%);
+}

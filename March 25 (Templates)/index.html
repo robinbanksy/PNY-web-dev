@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="card.css">
+    <title>March 25</title>
+</head>
+<body>
+    <div class="wrapper">
+    <header>
+            <h1>DOM Manipulation with Templates</h1>
+        </header>
+        <section class="content">
+                <h2>HTML Template Elements</h2>
+                <p>The HTML Template tag allows us to define HTML structures that we can then clone and insert into the DOM, thus adding dynamically generated elements into our web pages</p>
+                <p>Templates themselves do not appear in the DOM when the page loads. They are only used as a source for creating new elements.</p>
+                <p>HTML:</p>
+                <pre class="code-block"><code>&lt;template id="card-template"&gt;
+    &lt;div class="card"&gt;
+        &lt;h3 class="card-title"&gt;&lt;/h3&gt;
+        &lt;p class="card-description"&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/template&gt;</code></pre>
+                <p>JS:</p>
+                <pre class="code-block"><code><span class="comment">// Get the template and the container</span>
+const template = document.getElementById('card-template');
+const container = document.querySelector('.card-container');
+
+<span class="comment">// Clone the template and append it to the container</span>
+const clone = template.content.cloneNode(true);
+container.appendChild(clone);</code></pre>
+
+                <p>The cloneNode method creates a "document fragment", which is like a smaller DOM, independent of the main one. As seen above, it gives us access to methods like querySelector, so we can get access to the elements within the clone.</p>
+                <p>Since the document fragment is an independent DOM, separate from the main one, we can modify its content without affecting the web page, or the original template.</p>
+                <p>Once we've modified the clone to our liking, we can append to the main DOM, making it visible on the page. We do this by using the appendChild method on an element in the main DOM which will become the parent of the new element.</p>
+                <p>Below is a simple example, where the code for creating the clone are within an event listener callback:</p>
+
+        </section>
+        <section class="content">
+                <!-- THIS IS A TEMPLATE -->
+                <template id="card-template">
+                    <div class="card">
+                        <h3 class="card-title"></h3>
+                        <p class="card-description"></p>
+                    </div>
+                </template>
+
+                <button id="add-item">Add Item</button>
+                <h2>Items:</h2>
+                <div class="card-container"></div>
+        </section>
+    </div>
+    <footer></footer>
+        <p>&copy; 2026 Umair Almahmood</p>
+    </footer>
+
+    <script src="template.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+:root {
+    --bg-color: #e6f9fc;
+    --fg-color: #043413;
+
+    --accent-primary: #7CFFCB;
+    --accent-secondary: #74F2CE;
+    --accent-tertiary: #379634;
+    --accent-yellow: #F2CC8F;
+}
+
+
+@font-face {
+    font-family: 'Funnel Display';
+    src: url(./fonts/Funnel_Display/FunnelDisplay-VariableFont_wght.ttf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    font-family: 'Funnel Display', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 7rem;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 80%;
+}
+
+header {
+    position: relative;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: var(--lightest-color);
+    
+}
+
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--fg-color);
+}
+
+.content p strong {
+    color: var(--accent-orange);
+    font-weight: 1000;
+    transition: 300ms all ease-in-out;
+}
+strong:hover {
+    color: var(--accent-blue);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.code-block {
+    background-color: var(--fg-color);
+    color: var(--accent-secondary);
+    padding: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+    overflow-x: auto;
+}
+.comment {
+    color: hsl(from var(--accent-primary) h 70% 30%);
+    font-style: italic;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    color: var(--fg-color);
+}
