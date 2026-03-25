@@ -54,7 +54,7 @@ child.addEventListener('click', function() {
             <p>In addition to bubbling, there is also a <strong>capturing</strong> phase, where events are handled from the top down (from the parent to the child). By default, event listeners are set to handle events during the bubbling phase, but you can specify that an event listener should handle events during the capturing phase by passing a third argument as true:</p>
             <pre class="code-block"><code>element.addEventListener('click', function() {
      <span class="comment">// Handle click event</span>
-}, true); <span class="comment">// true for capturing phase</span></code></pre>
+}, true); <span class="comment">// true for capturing phase</span></cod    <script src="main.js"></script>e></pre>
             <p>The capturing phase is less commonly used, but it can be useful in specific scenarios where you want to handle events before they reach the target element.</p>
 
             <iframe src="capturing.html" frameborder="0" class="capturing-demo"></iframe>
@@ -69,6 +69,9 @@ child.addEventListener('click', function() {
             </div>
         </section>
     </div>
+
+    <button class="challenge-button">Click Me!</button>
+    <p class="counter">0</p>
 
     <footer></footer>
         <p>&copy; 2026 Umair Almahmood</p>

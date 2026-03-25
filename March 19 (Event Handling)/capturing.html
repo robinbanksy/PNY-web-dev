@@ -15,10 +15,24 @@
     </div>
     
     <script>
+
+
+
         for(let el of document.querySelectorAll('*')) {
+
+            if(el.classList.contains("capturing-parent")) {
+
+                el.addEventListener("click", function(e) {
+                    alert(`Bubbling: ${el.tagName} ${el.className}`);
+                    e.stopPropagation();
+                 });
+            } else {
+                el.addEventListener("click", e => alert(`Bubbling: ${el.tagName} ${el.className}`));
+            }
+        
             el.addEventListener("click", e => alert(`Capturing: ${el.tagName} ${el.className}`), true);
-            el.addEventListener("click", e => alert(`Bubbling: ${el.tagName} ${el.className}`));
         }
     </script>
+
 </body>
 </html>

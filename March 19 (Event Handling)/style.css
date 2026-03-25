@@ -39,27 +39,11 @@ body {
     width: 80%;
 }
 
-header::before {
-    left: 400px;
-    background-color: var(--accent-purple);
-}
-header h1::before {
-    left: 435px;
-    background-color: var(--accent-blue);
-}
-header h1::after {
-    left: 470px;
-    background-color: var(--accent-yellow);
-}
-header::after {
-    background-color: var(--accent-orange);
-    left: 505px;
-}
-
 header::after,
 header::before,
 header h1::before,
 header h1::after {
+    animation: shimmy 400ms ease-in-out 1;
     position: absolute;
     bottom: calc(50% - 15px);
     transform: rotate(45deg);
@@ -69,6 +53,27 @@ header h1::after {
     height: 20px;
     border: solid 2px var(--fg-color);
     border-radius: 5px;
+}
+
+header::before {
+    left: 400px;
+    background-color: var(--accent-purple);
+    animation-delay: 50ms;
+}
+header h1::before {
+    left: 435px;
+    background-color: var(--accent-blue);
+    animation-delay: 100ms;
+}
+header h1::after {
+    left: 470px;
+    background-color: var(--accent-yellow);
+    animation-delay: 150ms;
+}
+header::after {
+    background-color: var(--accent-orange);
+    left: 505px;
+    animation-delay: 200ms;
 }
 
 header {
@@ -215,4 +220,19 @@ footer {
 .challenge-paragraph {
     font-size: 1.2rem;
     color: var(--fg-color);
+}
+
+@keyframes shimmy {
+    0% {
+        transform: translateY(0) rotate(45deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(45deg);
+    }
+    90% {
+        transform: translateY(3px) rotate(45deg);
+    }
+    100% {
+        transform: translateY(0) rotate(45deg);
+    }
 }
