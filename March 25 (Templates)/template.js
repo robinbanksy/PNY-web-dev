@@ -1,5 +1,6 @@
-const addButton = document.getElementById('add-item')
+const addButton = document.getElementById('add-item');
 const template = document.getElementById('card-template');
+const itemDescInput = document.querySelector('.item-description-input');
 
 let cardCount = 0;
 
@@ -12,7 +13,7 @@ addButton.addEventListener('click', () => {
 
     // Modifying the clone to include the desired content.
     clone.querySelector('.card-title').textContent = `Item ${cardCount}`;
-    clone.querySelector('.card-description').textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+    clone.querySelector('.card-description').textContent = itemDescInput.value;
 
     // Append our new cloned card to the container.
     // Once we do this, the content of the template will be rendered and visible on the page.
