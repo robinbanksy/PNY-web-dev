@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>March 26</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Form Data and JSON</h1>
+        </header>
+        <section class="content">
+            <h2>Forms</h2>
+            <p>On our web pages, we use input elements to collect data from users. These input elements are often organized into forms, so that related data can be submitted together.</p>
+            <p>HTML:</p>
+            <pre class="code-block">
+&lt;form action="/submit" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+            </pre>
+            <p>JS:</p>
+            <pre class="code-block">
+const form = document.querySelector('form');
+
+form.addEventListener('submit', function(event) {
+    <span class="comment">// Prevent the default form submission</span>
+    event.preventDefault();
+
+    <span class="comment">// Get the form data</span>
+    const formData = new FormData(form);
+
+    <span class="comment">// Convert the form data to JSON</span>
+    const jsonData = Object.fromEntries(formData);
+
+    <span class="comment">// Do something with the JSON data</span>
+    <span class="comment">// (e.g., send it to a database or display it on the page)</span>
+    console.log(jsonData);
+});
+            </pre>
+
+            <!-- User Data Form-->
+            <form action="" method="post">
+                <div class="input-pair">
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname">
+                </div>
+                <div class="input-pair">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="lname">
+                </div>
+                <div class="input-pair">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+
+            <!-- User Data Template -->
+            <template id="user-data-template">
+                <div class="user-data">
+                    <h3>User Data</h3>
+                    <p>Name: <span class="user-name"></span></p>
+                    <p>Email: <span class="user-email"></span></p>
+                </div>
+            </template>
+
+
+            <div class="user-data-container">
+                <!-- User data will be inserted here -->
+            </div>
+        </section>
+
+        <section class="content">
+            <h2>JSON</h2>
+            <p>Much of programming, including web development, is centered around the manipulation of data. For example, you may have a database of information which your website draws from, formats, and displays. Or your website might collect data from users with a form like the one above.</p>
+            <p>There are different methods of storing this data, but one of the most common is called JavaScript Object Notation (JSON). JSON mimics the format of JavaScript objects, making it easy to work with in web applications. However, it is not specific to JavaScript; JSON is used with many different programming languages and use-cases. Its widespread adoption makes it a popular choice for data interchange in web development.</p>
+            <p>Here's and example of JSON data:</p>
+            <pre class="code-block">
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com"
+}
+            </pre>
+            <p>As you can see, it is quite similar to a JavaScript object; it consists of key-value pairs enclosed in curly braces.</p>
+        </section>
+    </div>
+
+    <script src="form.js" defer></script>
+</body>
+</html>
