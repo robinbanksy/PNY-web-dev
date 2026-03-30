@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">    
+    <title>March 30</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Web APIs</h1>
+        </header>
+        <section class="content">
+            <p>Web APIs are sets of rules and protocols that allow different software applications to communicate with each other over the internet.</p>
+            <p>Often, we use them to get data from other applications or services.</p>
+            <p>They are essential for building modern web applications that rely on external data sources.</p>
+        </section>
+        <section class="content example">
+            <p>Below, we access an Emoji API using JS:</p>
+            <pre class="code-block"><code>fetch('https://emojihub.yurace.pro/api/random')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        const emojiElement = document.createElement('div');
+        emojiElement.textContent = `Emoji: ${data.name} ${data.htmlCode[0]}`;
+        document.body.appendChild(emojiElement);
+    })
+    .catch(error => console.error('Error fetching emoji:', error));
+            </code></pre>
+            <div class="emoji-container"></div>
+            <p>In this example, we fetch a random emoji from the API and display its name and symbol on the webpage.</p>
+        </section>
+        <footer>
+            <p>&copy; 2026 Umair Almahmood</p>
+            <a href="https://github.com/robinbanksy/PNY-web-dev" target="_blank">Github Repo</a>
+        </footer>
+        
+        <script src="main.js"></script>
+    </div>
+</body>
+</html>
