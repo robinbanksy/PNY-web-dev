@@ -1,8 +1,10 @@
 
 // Write a function determines if a number is even or odd
 function isEven(num) {
+
     return false;
 }
+
 
 // Write a function that calculates the area of a circle given its radius
 function areaOfCircle(radius) {
@@ -24,8 +26,24 @@ function isPrime(num) {
 // Rot13 is a simple letter substitution cipher that replaces a letter with the letter 13 letters after it in the alphabet. 
 // For example, 'A' becomes 'N', 'B' becomes 'O', and so on.
 function rot13(str) {
-    return str;
+    const alpha = "abcdefghijklmnopqrstuvwxyz"
+
+    let output = ""
+    let index = 0;
+    for (const char of str) {
+        if(!alpha.includes(char.toLowerCase())) {
+            output += char;
+        } else {
+            index = alpha.indexOf(char.toLowerCase())
+            output += alpha.charAt((index + 13) % 26)
+        }
+    }
+
+    return output;
 }
+
+console.log(rot13("guvf vf n frperg zrffntr."));
+
 
 // Write a function that encrypts a string using an n-shift cipher
 // Like Rot13, an n-shift cipher replaces each letter with the letter n letters after it in the alphabet.
