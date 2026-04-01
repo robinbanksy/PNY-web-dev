@@ -35,3 +35,11 @@ console.log("This is the third log");
 //     console.log(`Fetched data (Async/Await): ${JSON.stringify(data)}`);
 // }
 // fetchData();
+
+// Another example
+async function fetchMetObject() {
+    const response = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/1000');
+    const data = await response.json();
+    console.log(`Fetched data (Met Object): ${JSON.stringify(data)}`);
+}
+fetchMetObject();
