@@ -37,7 +37,23 @@ function nShiftCipher(str, n) {
 // }
 function parseUser(userStr) {
 
+    const nameStart = userStr.indexOf("name: ") + 6;
+    const nameEnd = userStr.indexOf(", age: ");
+
+    const ageStart = userStr.indexOf("age: ") + 5;
+    const ageEnd = userStr.indexOf(", city: ");
+     
+    const cityStart = userStr.indexOf("city: ") + 6;
+
+
+    return {
+        name : userStr.substring(nameStart, nameEnd),
+        age: userStr.substring(ageStart, ageEnd),
+        city: userStr.substring(cityStart)
+    }
 }
+
+console.log(parseUser("name: John Doe, age: 30, city: New York").city);
 
 // Write a class called "Rectangle" that has the following properties and methods:
 // Properties:
@@ -47,7 +63,18 @@ function parseUser(userStr) {
 // - area(): returns the area of the rectangle
 // - perimeter(): returns the perimeter of the rectangle
 class Rectangle {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
 
+    area() {
+        return this.width * this.height;
+    }
+
+    perimeter() {
+        return 2 * (this.width + this.height); 
+    }
 }
 
 // Write a class called "Circle" that has the following properties and methods:
@@ -57,5 +84,25 @@ class Rectangle {
 // - area(): returns the area of the circle
 // - circumference(): returns the circumference of the circle
 class Circle {
+    constructor(radius) {
+        this.radius = radius;
+    }
 
+    static fromCircle(circle) {
+        return new Circle(circle.radius)
+    }
+
+    area() {
+        return Math.PI * this.radius * this.radius;
+    }
+
+    circumference() {
+        return 2 * Math.PI * this.radius;
+    }
 }
+
+const rect1 = new Rectangle(5, 10);
+console.log(rect1.area());
+
+const circle1 = new Circle(3);
+const circle2 = fromCircle(circle1);
